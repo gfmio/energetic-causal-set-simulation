@@ -2,7 +2,10 @@
 Causal set class module
 """
 
+import matplotlib as mpl
+mpl.use('Agg')
 import matplotlib.pyplot as plt
+from matplotlib import rc
 
 from .event import Event
 
@@ -42,6 +45,10 @@ class CausalSet(object):
         """Plot the causal set"""
         fig = plt.figure(figsize=(7, 10))
 
+        plt.rc('text', usetex=False)
+        plt.rcParams['ps.usedistiller'] = 'xpdf'
+        plt.rc('font', family='Linux Libertine O')
+
         T = list(map(lambda event: event.t, self.events))
         X = list(map(lambda event: event.x, self.events))
         plt.scatter(X,T, marker=",", s=2, edgecolors='none')
@@ -51,10 +58,10 @@ class CausalSet(object):
 
         plt.axes().set_xlabel('Position $x$')
         plt.axes().set_ylabel('Time $t$')
-        plt.axes().set_title(title, y=1.02, fontsize=12)
+        plt.axes().set_title(title, fontsize=12,  y=1.02)
 
         if fileName != None:
-            plt.savefig(fileName, dpi=300)
+            plt.savefig(fileName, dpi=600)
             print('Plot saved to ' + fileName)
         if showPlot:
             plt.show()

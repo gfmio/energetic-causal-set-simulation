@@ -70,7 +70,7 @@ def parseArgs():
                     help='Simulation in extended space (no wrap around)')
     parser.add_argument('--plotdir', dest='plotDir', type=str, nargs='?', default='./plots',
                     help='Plot output directory')
-    parser.add_argument('--plottype', dest='plotType', type=str, nargs='?', default='png',
+    parser.add_argument('--plottype', dest='plotType', type=str, nargs='?', default='pdf',
                     help='Plot output directory')
     parser.add_argument('--show', dest='show', action='store_const', const=True, default=False,
                     help='Show plot')

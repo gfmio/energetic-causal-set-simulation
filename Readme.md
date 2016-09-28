@@ -19,4 +19,8 @@ If the `--nonlocal` option is supplied, a non-local selection rule based on maxi
 
 Since only a supplied seed value will result in reproducable plots, the plots are only saved into the `plotDir`, if such a value is supplied. The filename is constructed from the parameters of the simulation to allow a quick identification of plots and simulation parameters. The `--show` option allows the plot to be displayed interactively once the simulation has completed. By default, simulations with a supplied seed value will not be shown, but only saved to file, while a simulation without a seed value will always be shown.
 
+# Font rendering
+
+The simulation uses Linux Libertine to render the plots. Hence, the font needs to be installed and available to matplotlib to render correctly. If the font is not found, a default font will be used for rendering. The normal Linux Libertine font files from the [www.linuxlibertine.org](http://www.linuxlibertine.org) are not supported by matplotlib due to missing font tables. The issue can be resolved by converting the files using [www.files-conversion.com](http://www.files-conversion.com/).
+
 License: MIT
